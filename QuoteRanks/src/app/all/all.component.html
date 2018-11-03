@@ -1,0 +1,63 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+    <style>
+      #wrapper {
+        background-color: lightgrey;
+        padding-bottom: 50px;
+      }
+      #main {
+        margin-top: 15px;
+        margin-left: 300px;
+      }
+      a {
+        font-size: 22px;
+      }
+      table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin: 10px;
+        margin-bottom: 30px;
+      }
+      th {
+        text-align: left;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+        padding-right: 150px;
+        background-color: rgb(141, 142, 209);
+        font-size: 20px;
+      }
+      tr td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        background-color: rgb(237, 241, 248);
+        font-size: 20px;
+      }
+      button {
+        padding: 10px 15px;
+        margin-left: 15px;
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id = "wrapper">
+      <div id = "main">
+        <a routerLink = "/new">Add an author!</a>
+        <table>
+          <tr>
+            <th>Author</th>
+            <th>Actions</th>
+          </tr>
+          <tr *ngFor = "let a of authors">
+            <td>{{a.name}}</td>
+            <td><button class = "btn btn-primary" (click) = "showAuthor(a)">View Quotes</button>
+              <button class = "btn btn-dark" (click) = "editRedirect(a)">Edit Author's Name</button></td>
+          </tr>
+      </table>
+      </div>
+    </div>
+  </body>
